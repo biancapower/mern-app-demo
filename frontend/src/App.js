@@ -3,6 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewCounter: 0,
+    };
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,6 +20,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <p>This page has been loaded {this.state.viewCounter} times!</p>
       </div>
     );
   }
