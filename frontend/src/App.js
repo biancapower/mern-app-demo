@@ -8,6 +8,14 @@ class App extends Component {
     this.state = {
       viewCounter: 0,
     };
+    // get loadcount from backend (in background)
+    fetch('/loadCounter')
+      // get data from response
+      .then(response => response.json())
+      // update page
+      .then(count => this.setState({
+        viewCounter: count,
+      }));
   }
 
   render() {
